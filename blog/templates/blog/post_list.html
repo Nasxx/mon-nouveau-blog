@@ -7,7 +7,13 @@
             <h1><a href="/">Django Girls Blog</a></h1>
         </div>
 
-        <div>
+        {% for post in posts %}
+            <div>
+                <p>published: {{ post.published_date }}</p>
+                <h2><a href="">{{ post.title }}</a></h2>
+                <p>{{ post.text|linebreaksbr }}</p>
+            </div>
+        {% endfor %}
             <p>published: 09.05.2020, 15:14</p>
             <h2><a href="">Mon premier post</a></h2>
             <p>Tellement excitant de créer son blog avec ses propres mimines !</p>
